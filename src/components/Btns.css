@@ -1,0 +1,26 @@
+
+.btn-con{
+    height: 60px;
+    width:250px;
+    border-radius: 50px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  button{
+    display: flex;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 58px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .btn-a{ background: #1d4e89;}
+  .btn-b{ background: #ffffff;}
+  
+  .btn-a button{ color: #ffffff;}
+  .btn-b button{ color: #1d4e89;}
