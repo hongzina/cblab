@@ -4,6 +4,14 @@ import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import Carousel from "../components/Carousel";
 
+
+import ListAltIcon from '@mui/icons-material/ListAlt';
+import CampaignOutlinedIcon from '@mui/icons-material/CampaignOutlined';
+import QuestionAnswerOutlinedIcon from '@mui/icons-material/QuestionAnswerOutlined';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+
 export default function Home() {
     const [currentBanner, setCurrentBanner] = useState(0);
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -120,19 +128,21 @@ export default function Home() {
                 </div>
 
                 <div className="notice-banner">
-                    <div className="notice-text">
-                        <div className="alert-sub">
-                            아직도! 원하는 기업을 찾지 못하셨나요?
+                    <div className="width-wrapper">
+                        <div className="notice-text">
+                            <div className="alert-sub">
+                                아직도! 원하는 기업을 찾지 못하셨나요?
+                            </div>
+                            <div className="alert-title">
+                                정보 분석을 통해 맞춤형 기업을 찾아드리겠습니다.
+                            </div>
                         </div>
-                        <div className="alert-title">
-                            정보 분석을 통해 맞춤형 기업을 찾아드리겠습니다.
-                        </div>
-                    </div>
-                    <div className="notice-btn">
-                        <div className="btn-con btn-b">
-                            <button className="" onClick={() => {}}>
-                                통합검색 Go
-                            </button>
+                        <div className="notice-btn width-wrapper-right">
+                            <div className="btn-con btn-b">
+                                <button className="" onClick={() => {}}>
+                                    통합검색 Go
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -194,12 +204,57 @@ export default function Home() {
                         <div>공지</div>
                         <div>{newsData[currentNews].name}</div>
                         <div className="news-arrows">
-                            <div onClick={() => setCurrentNews(currentNews === 0 ? newsData.length - 1 : currentNews - 1)}>^</div>
-                            <div onClick={() => setCurrentNews(currentNews == newsData.length - 1 ? 0 : currentNews + 1)}>v</div>
+                            <div onClick={() => setCurrentNews(currentNews === 0 ? newsData.length - 1 : currentNews - 1)}>
+                                <ExpandLessIcon className="up-arrow" />
+                            </div>
+                            <div onClick={() => setCurrentNews(currentNews == newsData.length - 1 ? 0 : currentNews + 1)}>
+                            <ExpandMoreIcon className="down-arrow" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            {/* 문의사항 */}
+            <div className="question">
+                <div className="width-wrapper">
+                    <div className="question-l">
+                        <div className="q-text1">
+                            서비스&사이트 이용문의
+                        </div>
+                        <div className="q-text2">
+                            02-2101-9114
+                        </div>
+                        <div className="q-text1">
+                            월~금 09:00 ~ 18:00
+                        </div>
+                        <div className="q-text1">
+                            주말/공휴일 휴무
+                        </div>
+                    </div>
+                    <div className="question-r width-wrapper-right">
+                        <div className="q-btn btn-notice">
+                            <div className="inner-text center">
+                                <CampaignOutlinedIcon className="loud-icon" />
+                                <div className="q-text">공지사항</div>
+                            </div>
+                        </div>
+                        <div className="q-btn btn-file">
+                            <div className="inner-text center">
+                                <ListAltIcon className="listait-icon" />
+                                <div className="q-text">자료실</div>
+                            </div>
+                        </div>
+                        <div className="q-btn btn-faq">
+                            <div className="inner-text center">
+                                <QuestionAnswerOutlinedIcon className="faq-icon" />
+                                <div className="q-text">FAQ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             {/* Footer */}
             <Footer />

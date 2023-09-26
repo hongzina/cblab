@@ -7,7 +7,7 @@ export default function Header() {
 
     return (
         <div className="header">
-            <div className="header-wrapper">
+            <div className="header-wrapper width-wrapper">
                 {/* logo */}
                 <div className="logo-wrapper">
                     <img src="./images/logo_cbLab.png" />
@@ -23,7 +23,7 @@ export default function Header() {
 
 
                 {/* header buttons (login, sign-up, help) */}
-                <div className="header-buttons-wrapper">
+                <div className="header-buttons-wrapper width-wrapper-right">
                     <button className="h-btn login-button" onClick={() => {}}>
                         로그인
                     </button>

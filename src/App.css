@@ -3,6 +3,22 @@
 .title-main{ color: #00285c; font-size: 72px; font-weight: 600; margin-bottom: 60px;}
 .title-sub{ color: #00285c; font-size: 36px; font-weight: 600;}
 
+.app {
+  overflow-x: hidden;
+}
+
+
+.width-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: row;
+}
+
+.width-wrapper-right {
+  margin: auto 0 auto auto;
+}
+
 
 .btn-con{
   height: 60px;
@@ -42,12 +58,6 @@ button{
   background: #ffffff;
 }
 
-.header-wrapper {
-  width: 100%;
-  max-width: 1400px;
-  display: flex;
-  flex-direction: row;
-}
 
 .logo-wrapper{
   display: inline-block;
@@ -71,9 +81,6 @@ button{
   padding: 0 10px; vertical-align: middle; display: flex; flex-direction: row; height: 100%;
 }
 
-.header-buttons-wrapper {
-  margin: auto 0 auto auto;
-}
 
 .search-icon{
   margin-top: auto; margin-bottom: auto;
@@ -240,6 +247,8 @@ button{
   margin-bottom: auto;
 }
 
+.notice-btn{}
+
 .alert-sub{ font-size: 18px; font-weight: 500;}
 .alert-title{ font-size: 24px; font-weight: 600;}
 
@@ -265,6 +274,112 @@ button{
 
 .announce{ background: #dce4ed; padding: 60px;}
 
+.slick-carousel-wrapper {
+  margin-bottom: 60px;
+}
+
+.slick-card {
+  width: 452px;
+  height: 254px;
+  background-color: antiquewhite;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.arrow-wrapper{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  color: #ffffff;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  background: #1d4e89;
+}
+
+.next-arrow-wrapper {
+  right: 0px;
+}
+
+.prev-arrow-wrapper {
+  left: 0px;
+}
+
+.arrow{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev-arrow{
+  left: 4px;
+}
+.next-arrow{
+  left: 2px;
+}
+
+
+
+
+.news {
+  margin-top: 60px;
+}
+
+.news-carousel-wrapper {
+  background-color: #656565;
+  width: 1200px;
+  margin: 0 auto 0 auto;
+  border-radius: 10px;
+}
+
+.news-carousel {
+  display: flex;
+  flex-direction: row;
+}
+
+.news-arrows {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.question{ display: flex; flex-direction: row; justify-content: center; padding: 60px 0;}
+
+.q-text1{ font-size: 24px; font-weight: 600;}
+.q-text2{ font-size: 60px; font-weight: 700; padding: 20px 0;}
+
+.question-r{
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.q-btn{
+  font-size: 20px; 
+  font-weight: 600;
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  background: #1d4e89;
+  color: #ffffff;
+  margin: 0 30px;
+}
+
+.inner-text{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.loud-icon,
+.listait-icon,
+.faq-icon{
+  width: 50px;
+}
+
 
 
 
@@ -272,22 +387,33 @@ button{
 
 }
 
-.footer-first{
+.footer-first {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   background: #1d4e89;
   color: #ffffff;
-  padding: 10px 0;
   font-size: 16px;
+}
+
+.footer-first-inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1400px;
 }
 
 .first-l{
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
+  width: 100%;
+  max-width: 500px;
+  margin-right: auto;
+  padding: 10px 0;
 }
 
-.first-r{
+.first-r {
   background: #00285c;
   border-radius: 10px;
 }
@@ -309,29 +435,22 @@ button{
   text-align: right;
 }
 
-.slick-card {
-  width: 452px;
-  height: 254px;
-  background-color: antiquewhite;
-  border-radius: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.next-arrow-wrapper {
-  position: absolute;
-  right: 0px;
-  z-index: 30;
-}
-
-.prev-arrow-wrapper {
-  position: absolute;
-  left: 0px;
-  z-index: 30;
-}
 
 .footer-dropdown-wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.footer-dropdown-text {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .footer-dropdown-active {
@@ -348,25 +467,4 @@ button{
   height: 0px;
   opacity: 0;
   pointer-events: none;
-}
-
-.news {
-  background-color: #656565;
-  height: 500px;
-}
-
-.news-carousel-wrapper {
-  background-color: #ebecf0;
-  width: 200px;
-  margin: 0 auto 0 auto;
-}
-
-.news-carousel {
-  display: flex;
-  flex-direction: row;
-}
-
-.news-arrows {
-  display: flex;
-  flex-direction: column;
 }

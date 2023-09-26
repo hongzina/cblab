@@ -4,6 +4,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
+
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
+
 export default function Carousel({ data }) {
 	const [list, setList] = useState([]);
 	const [current, setCurrent] = useState(0);
@@ -36,18 +42,16 @@ export default function Carousel({ data }) {
 
 	function NextArrow({ onClick }) {
 		return (
-			<div className={`next-arrow-wrapper`} onClick={onClick}>
-				<div className="next-arrow">{">"}</div>
+			<div className={`next-arrow-wrapper arrow-wrapper`} onClick={onClick}>
+				<ArrowForwardIosIcon className="next-arrow arrow" />
 			</div>
 		);
 	}
 
 	function PrevArrow({ onClick }) {
 		return (
-			<div className={`prev-arrow-wrapper`} onClick={onClick}>
-				<div className="prev-arrow">
-					{"<"}
-				</div>
+			<div className={`prev-arrow-wrapper arrow-wrapper`} onClick={onClick}>
+				<ArrowBackIosIcon className="prev-arrow arrow" />
 			</div>
 		);
 	}
@@ -82,7 +86,7 @@ export default function Carousel({ data }) {
 	};
 
 	return (
-		<div className={"relative"}>
+		<div className={"slick-carousel-wrapper"}>
 			<Slider {...settings} ref={sliderRef}>
 				{list?.map((data, i) => (
 					<div key={i} className={""}>
