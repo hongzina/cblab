@@ -101,7 +101,12 @@ export default function Carousel({ data }) {
 function SlickCard({ data }) {
     return (
         <div className="slick-card">
-			{data.name}
+			<div className="company-title">
+				{data.name}
+			</div>
+			<div className="company-status">
+				{data.status}
+			</div>
         </div>
     );
 }

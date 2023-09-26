@@ -15,6 +15,17 @@
   flex-direction: row;
 }
 
+.column-width-wrapper{
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
 .width-wrapper-right {
   margin: auto 0 auto auto;
 }
@@ -38,6 +49,7 @@ button{
   line-height: 58px;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 
 .btn-a{ background: #1d4e89;}
@@ -47,6 +59,7 @@ button{
 .btn-b button{ color: #1d4e89;}
 
 
+a{text-decoration: none; color: #ffffff;}
 
 
 .header{
@@ -129,6 +142,7 @@ button{
   min-width: 280px;
   max-width: 280px;
   text-align: center;
+  cursor: pointer;
 }
 
 .menu-item-wrapper-active {
@@ -154,7 +168,7 @@ button{
 }
 
 .menu-active {
-
+  cursor: pointer;
 }
 
 .menu-inactive { display: none;}
@@ -227,6 +241,7 @@ button{
   padding: 15px 60px;
   font-size: 24px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 
@@ -253,7 +268,7 @@ button{
 .alert-title{ font-size: 24px; font-weight: 600;}
 
 
-.data-page{ background: #ebecf0; padding: 60px;}
+.data-page{ background: #ebecf0; padding: 120px 0;}
 
 
 .data-memo{
@@ -265,6 +280,7 @@ button{
   padding: 60px;
 }
 
+
 .data-list{ margin: 0 60px;}
 
 .list-title{ font-size: 36px; font-weight: 600; color: #656565; margin-bottom: 30px;}
@@ -272,19 +288,21 @@ button{
 .common-text{font-size: 20px; font-weight: 800; color: #1d4e89;}
 
 
-.announce{ background: #dce4ed; padding: 60px;}
+.announce{ background: #dce4ed; padding: 120px 0;}
 
 .slick-carousel-wrapper {
   margin-bottom: 60px;
 }
 
 .slick-card {
-  width: 452px;
-  height: 254px;
+  position: relative;
+  width: 416px;
+  height: 312px;
   background-color: antiquewhite;
   border-radius: 15px;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 
 .arrow-wrapper{
@@ -297,6 +315,7 @@ button{
   width: 50px;
   height: 50px;
   background: #1d4e89;
+  cursor: pointer;
 }
 
 .next-arrow-wrapper {
@@ -321,17 +340,40 @@ button{
 }
 
 
+.company-title{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.company-status{
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  width: 80px;
+  height: 20px;
+  background: #1d4e89;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 5px 0;
+}
 
 
 .news {
-  margin-top: 60px;
+  padding-top: 120px;
+  background: #ebecf0;
 }
 
 .news-carousel-wrapper {
-  background-color: #656565;
-  width: 1200px;
+  background-color: #ffffff;
+  width: 1400px;
   margin: 0 auto 0 auto;
   border-radius: 10px;
+  padding: 10px 60px;
+  box-sizing: border-box;
 }
 
 .news-carousel {
@@ -339,16 +381,41 @@ button{
   flex-direction: row;
 }
 
+.news-text{
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+}
+
+.noti-news{
+  margin-right: 60px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: auto;
+  margin-bottom: auto;}
+
+.news-title{ font-weight: 800;}
+
 .news-arrows {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 
-.question{ display: flex; flex-direction: row; justify-content: center; padding: 60px 0;}
+.question{ display: flex; flex-direction: row; justify-content: center; padding: 60px 0 120px 0; background: #ebecf0;}
+
+.question .width-wrapper{ background: #ffffff; border-radius: 15px; padding: 30px; box-sizing: border-box;}
+
 
 .q-text1{ font-size: 24px; font-weight: 600;}
 .q-text2{ font-size: 60px; font-weight: 700; padding: 20px 0;}
+
+.question-l{
+  padding: 0 30px;
+}
 
 .question-r{
   display: flex;
@@ -366,6 +433,7 @@ button{
   background: #1d4e89;
   color: #ffffff;
   margin: 0 30px;
+  cursor: pointer;
 }
 
 .inner-text{
@@ -413,9 +481,14 @@ button{
   padding: 10px 0;
 }
 
+.first-l > div{
+  cursor: pointer;
+}
+
 .first-r {
   background: #00285c;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 
@@ -423,8 +496,7 @@ button{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 60px 0;
 }
 
 .last-l{

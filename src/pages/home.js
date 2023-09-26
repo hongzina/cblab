@@ -61,35 +61,35 @@ export default function Home() {
 
     const carouselData = [
         {
-            name: "test1",
+            name: "회사명1",
             image: "",
-            status: 0,
+            status: "진행중",
         },
         {
-            name: "test2",
+            name: "회사명2",
             image: "",
-            status: 1,
+            status: "종료",
         },
         {
-            name: "test3",
+            name: "회사명3",
             image: "",
-            status: 2,
+            status: "예정",
         },
         {
-            name: "test3",
+            name: "회사명4",
             image: "",
-            status: 2,
+            status: "예정",
         },
         {
-            name: "test3",
+            name: "회사명5",
             image: "",
-            status: 2,
+            status: "예정",
         },
     ];
 
     const newsData = [
         {
-            name: "news 1",
+            name: "공지사항 제목이 노출됩니다. 공지사항 제목이 노출됩니다.",
         },
         {
             name: "news 2",
@@ -150,50 +150,54 @@ export default function Home() {
 
             {/* date */}
             <div className="data-page">
-                <div className="title-con center">
-                    <div className="title-sub">
-                        기업의 거래활동에 필요한 모든 정보 실시간 수집
+                <div className="column-width-wrapper">
+                    <div className="title-con center">
+                        <div className="title-sub">
+                            기업의 거래활동에 필요한 모든 정보 실시간 수집
+                        </div>
+                        <div className="title-main">
+                            {currentDate.toLocaleDateString()}까지 수집된 기업정보 현황
+                        </div>
                     </div>
-                    <div className="title-main">
-                        {currentDate.toLocaleDateString()}까지 수집된 기업정보 현황
-                    </div>
-                </div>
-                <div className="data-memo center">
-                    <div className="data-list">
-                        <div className="list-title">보유 기업 수</div>
-                        <div className="list-nub">123,144,400</div>
-                        <div className="common-text">개사</div>
-                    </div>
-                    <div className="data-list">
-                        <div className="list-title">부동산 소유 법인</div>
-                        <div className="list-nub">123,144,400</div>
-                        <div className="common-text">개사</div>
-                    </div>
-                    <div className="data-list">
-                        <div className="list-title">실적 보유 기업</div>
-                        <div className="list-nub">123,144,400</div>
-                        <div className="common-text">개사</div>
+                    <div className="data-memo center">
+                        <div className="data-list">
+                            <div className="list-title">보유 기업 수</div>
+                            <div className="list-nub">123,144,400</div>
+                            <div className="common-text">개사</div>
+                        </div>
+                        <div className="data-list">
+                            <div className="list-title">부동산 소유 법인</div>
+                            <div className="list-nub">123,144,400</div>
+                            <div className="common-text">개사</div>
+                        </div>
+                        <div className="data-list">
+                            <div className="list-title">실적 보유 기업</div>
+                            <div className="list-nub">123,144,400</div>
+                            <div className="common-text">개사</div>
+                        </div>
                     </div>
                 </div>
             </div>
             {/* Announce */}
             <div className="announce">
-                <div className="title-con center">
-                    <div className="title-sub">
-                        기업 협력사의 모집공고를 알려드립니다.
+                <div className="column-width-wrapper">
+                    <div className="title-con center">
+                        <div className="title-sub">
+                            기업 협력사의 모집공고를 알려드립니다.
+                        </div>
+                        <div className="title-main">
+                            협력사 모집공고
+                        </div>
                     </div>
-                    <div className="title-main">
-                        협력사 모집공고
+
+                    {/* carousel */}
+                    <Carousel data={carouselData} />
+
+                    <div className="btn-con btn-a">
+                        <button className="" onClick={() => {}}>
+                            협력사 모집공고 더보기
+                        </button>
                     </div>
-                </div>
-
-                {/* carousel */}
-                <Carousel data={carouselData} />
-
-                <div className="btn-con btn-a">
-                    <button className="" onClick={() => {}}>
-                        협력사 모집공고 더보기
-                    </button>
                 </div>
             </div>
 
@@ -201,14 +205,16 @@ export default function Home() {
             <div className="news">
                 <div className="news-carousel-wrapper">
                     <div className="news-carousel">
-                        <div>공지</div>
-                        <div>{newsData[currentNews].name}</div>
+                        <div className="news-text">
+                            <div className="noti-news">공지</div>
+                            <div className="news-title">{newsData[currentNews].name}</div>
+                        </div>
                         <div className="news-arrows">
                             <div onClick={() => setCurrentNews(currentNews === 0 ? newsData.length - 1 : currentNews - 1)}>
                                 <ExpandLessIcon className="up-arrow" />
                             </div>
                             <div onClick={() => setCurrentNews(currentNews === newsData.length - 1 ? 0 : currentNews + 1)}>
-                            <ExpandMoreIcon className="down-arrow" />
+                                <ExpandMoreIcon className="down-arrow" />
                             </div>
                         </div>
                     </div>
@@ -234,22 +240,28 @@ export default function Home() {
                     </div>
                     <div className="question-r width-wrapper-right">
                         <div className="q-btn btn-notice">
-                            <div className="inner-text center">
-                                <CampaignOutlinedIcon className="loud-icon" />
-                                <div className="q-text">공지사항</div>
-                            </div>
+                            <a href="javascript:;">
+                                <div className="inner-text center">
+                                    <CampaignOutlinedIcon className="loud-icon" />
+                                    <div className="q-text">공지사항</div>
+                                </div>
+                            </a>
                         </div>
                         <div className="q-btn btn-file">
-                            <div className="inner-text center">
-                                <ListAltIcon className="listait-icon" />
-                                <div className="q-text">자료실</div>
-                            </div>
+                            <a href="javascript:;">
+                                <div className="inner-text center">
+                                    <ListAltIcon className="listait-icon" />
+                                    <div className="q-text"><a href="javascript:;">자료실</a></div>
+                                </div>
+                            </a>
                         </div>
                         <div className="q-btn btn-faq">
-                            <div className="inner-text center">
-                                <QuestionAnswerOutlinedIcon className="faq-icon" />
-                                <div className="q-text">FAQ</div>
-                            </div>
+                            <a href="javascript:;">
+                                <div className="inner-text center">
+                                    <QuestionAnswerOutlinedIcon className="faq-icon" />
+                                    <div className="q-text"><a href="javascript:;">FAQ</a></div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -265,7 +277,7 @@ export default function Home() {
 function Banner({ banner }) {
     return (
         <div className="banner">
-            <div className="main-pg">
+            <div className="main-pg width-wrapper">
                 <div className="main-l">
                     <div className="sub-title">
                         {banner.text1}
@@ -286,7 +298,7 @@ function Banner({ banner }) {
                         {banner.text6}
                     </div>
                 </div>
-                <div className="main-r">
+                <div className="main-r width-wrapper-right">
                     <div className="object-cover">
                         <img className="object" src= {banner.image} />
                     </div>

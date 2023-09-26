@@ -1,16 +1,19 @@
 import { useState } from "react";
 
+
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 export default function Footer() {
 
     const dropdownMenus = [
         {
-            name: "menu 1",
+            name: "이크레더블",
         },
         {
-            name: "menu 2",
+            name: "뉴스랩",
         },
         {
-            name: "menu 3",
+            name: "Bigs",
         },
     ];
 
@@ -19,9 +22,9 @@ export default function Footer() {
             <div className="footer-first">
                 <div className="footer-first-inner-wrapper">
                     <div className="first-l">
-                        <div style={{ marginRight: "auto" }}>이용약관</div>
-                        <div style={{ marginRight: "auto", marginLeft: "auto" }}>개인정보 처리방침</div>
-                        <div style={{ marginLeft: "auto" }}>저작권 정책</div>
+                        <div style={{ marginRight: "auto" }}><a href="javascript:;">이용약관</a></div>
+                        <div style={{ marginRight: "auto", marginLeft: "auto" }}><a href="javascript:;">개인정보 처리방침</a></div>
+                        <div style={{ marginLeft: "auto" }}><a href="javascript:;">저작권 정책</a></div>
                     </div>
                     <div className="first-r">
                         <Dropdown data={dropdownMenus} />
@@ -60,11 +63,11 @@ function Dropdown({ data }) {
         <div className="footer-dropdown-wrapper" onClick={() => setIsActive(!isActive)}>
             <div className="footer-dropdown-text">
                 <div style={{ marginRight: "auto" }}>Family Site</div>
-                <div>v</div>
+                <div><ExpandMoreIcon className="down-arrow" /></div>
             </div>
             <div className={`footer-dropdown${isActive ? "-active" : ""}`}>
                 {data.map((item) => (
-                    <div>{item.name}</div>
+                    <div><a href="javascript:;" target="_blank">{item.name}</a></div>
                 ))}
             </div>
         </div>
