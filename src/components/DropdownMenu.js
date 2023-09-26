@@ -136,7 +136,7 @@ export default function DropdownMenu() {
     return (
         <div className="menu-wrapper">
             {menus.map((menu, i) => (
-                <div className="menu-item-wrapper" key={i}>
+                <div className={`menu-item-wrapper${currentMenu === i ? "-active" : ""}`} key={i}>
                     <div className="menu-item" onClick={() => setCurrentMenu(i)}>
                         {menu.name}
                     </div>

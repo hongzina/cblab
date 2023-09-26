@@ -1,5 +1,7 @@
-.title-con{ color: #00285c; font-size: 72px; font-weight: 600;}
-.sub-con{ color: #00285c; font-size: 36px; font-weight: 600;}
+.center{ text-align: center;}
+.title-con{}
+.title-main{ color: #00285c; font-size: 72px; font-weight: 600; margin-bottom: 60px;}
+.title-sub{ color: #00285c; font-size: 36px; font-weight: 600;}
 
 
 .btn-con{
@@ -36,6 +38,7 @@ button{
   height: 120px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   background: #ffffff;
 }
 
@@ -100,6 +103,8 @@ button{
   background: #1d4e89;
   height: 98px;
   line-height: 98px;
+  display: flex;
+  justify-content: center;
 }
 
 .menu-item-wrapper {
@@ -107,14 +112,32 @@ button{
   color: #ffffff;
   font-size: 24px;
   font-weight: 600;
-  margin: 0 30px;
+  margin: 0 auto 0 auto;
+  min-width: 280px;
+  max-width: 280px;
+  text-align: center;
+}
+
+.menu-item-wrapper-active {
+  display: inline-block;
+  color:#00285c;
+  background-color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 auto 0 auto;
+  min-width: 280px;
+  max-width: 280px;
+  text-align: center;
 }
 
 .sub-menu-wrapper {
   position: absolute;
+  width: 240px;
   display: flex;
   flex-direction: column;
-  color: #121212;
+  color: #00285c;
+  background-color: #ffffff;
+  padding: 0 20px;
 }
 
 .menu-active {
@@ -129,11 +152,12 @@ button{
 
 
 .banner{
-
+  display: flex;
+  justify-content: center;
+  background: #dce4ed;
 }
 
 .main-pg{
-  background: #dce4ed;
   display: flex;
   flex-direction: row;
   padding: 60px 0;
@@ -176,10 +200,16 @@ button{
   border-radius: 50%;
 } 
 
+.object{
+  position: relative;
+    top: -100px;
+    left: -50px;
+} 
 
 .menus{
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .banner-menu-item{
@@ -196,6 +226,7 @@ button{
   background: #00285c;
   padding: 60px 0;
   display: flex;
+  justify-content: center;
   flex-direction: row;
 }
 
@@ -209,20 +240,37 @@ button{
 .alert-title{ font-size: 24px; font-weight: 600;}
 
 
+.data-page{ background: #ebecf0; padding: 60px;}
+
 
 .data-memo{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 60px;
 }
 
+.data-list{ margin: 0 60px;}
+
+.list-title{ font-size: 36px; font-weight: 600; color: #656565; margin-bottom: 30px;}
+.list-nub{ font-size: 60px; font-weight: 800; color: #1d4e89;}
+.common-text{font-size: 20px; font-weight: 800; color: #1d4e89;}
+
+
+.announce{ background: #dce4ed; padding: 60px;}
 
 
 
 
+.footer{
+}
 
 .footer-first{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   background: #1d4e89;
   color: #ffffff;
   padding: 10px 0;
@@ -243,6 +291,8 @@ button{
 .footer-last{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  margin: 60px 0;
 }
 
 .last-l{
@@ -251,4 +301,24 @@ button{
 
 .last-r{
   text-align: right;
+}
+
+.slick-card {
+  width: 100px;
+  height: 100px;
+  background-color: antiquewhite;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.next-arrow-wrapper {
+  position: absolute;
+  right: 0px;
+  z-index: 30;
+}
+
+.prev-arrow-wrapper {
+  position: absolute;
+  left: 0px;
+  z-index: 30;
 }

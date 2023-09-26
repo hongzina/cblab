@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import DropdownMenu from "../components/DropdownMenu";
 import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
+import Carousel from "../components/Carousel";
 
 export default function Home() {
     const [currentBanner, setCurrentBanner] = useState(0);
@@ -46,6 +47,34 @@ export default function Home() {
             text3: "333",
             button_text: "서비스 안내·신청하기",
             button_link: "bbb1",
+        },
+    ];
+
+    const carouselData = [
+        {
+            name: "test1",
+            image: "",
+            status: 0,
+        },
+        {
+            name: "test2",
+            image: "",
+            status: 1,
+        },
+        {
+            name: "test3",
+            image: "",
+            status: 2,
+        },
+        {
+            name: "test3",
+            image: "",
+            status: 2,
+        },
+        {
+            name: "test3",
+            image: "",
+            status: 2,
         },
     ];
 
@@ -97,24 +126,26 @@ export default function Home() {
 
             {/* date */}
             <div className="data-page">
-                <div className="sub-con">
-                    기업의 거래활동에 필요한 모든 정보 실시간 수집
+                <div className="title-con center">
+                    <div className="title-sub">
+                        기업의 거래활동에 필요한 모든 정보 실시간 수집
+                    </div>
+                    <div className="title-main">
+                        {currentDate.toLocaleDateString()}까지 수집된 기업정보 현황
+                    </div>
                 </div>
-                <div className="title-con">
-                    {currentDate.toLocaleDateString()}까지 수집된 기업정보 현황
-                </div>
-                <div className="data-memo">
+                <div className="data-memo center">
                     <div className="data-list">
                         <div className="list-title">보유 기업 수</div>
                         <div className="list-nub">123,144,400</div>
                         <div className="common-text">개사</div>
                     </div>
-                    <div className="memo-list">
+                    <div className="data-list">
                         <div className="list-title">부동산 소유 법인</div>
                         <div className="list-nub">123,144,400</div>
                         <div className="common-text">개사</div>
                     </div>
-                    <div className="memo-list">
+                    <div className="data-list">
                         <div className="list-title">실적 보유 기업</div>
                         <div className="list-nub">123,144,400</div>
                         <div className="common-text">개사</div>
@@ -122,13 +153,19 @@ export default function Home() {
                 </div>
             </div>
             {/* Announce */}
-            <div>
-                <div className="sub-con">
-                    기업 협력사의 모집공고를 알려드립니다.
+            <div className="announce">
+                <div className="title-con center">
+                    <div className="title-sub">
+                        기업 협력사의 모집공고를 알려드립니다.
+                    </div>
+                    <div className="title-main">
+                        협력사 모집공고
+                    </div>
                 </div>
-                <div className="title-con">
-                    협력사 모집공고
-                </div>
+
+                {/* carousel */}
+                <Carousel data={carouselData} />
+
                 <div className="btn-con btn-a">
                     <button className="" onClick={() => {}}>
                         협력사 모집공고 더보기
