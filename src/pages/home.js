@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import DropdownMenu from "../components/DropdownMenu";
 import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
@@ -207,7 +207,7 @@ export default function Home() {
                             <div onClick={() => setCurrentNews(currentNews === 0 ? newsData.length - 1 : currentNews - 1)}>
                                 <ExpandLessIcon className="up-arrow" />
                             </div>
-                            <div onClick={() => setCurrentNews(currentNews == newsData.length - 1 ? 0 : currentNews + 1)}>
+                            <div onClick={() => setCurrentNews(currentNews === newsData.length - 1 ? 0 : currentNews + 1)}>
                             <ExpandMoreIcon className="down-arrow" />
                             </div>
                         </div>
