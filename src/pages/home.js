@@ -7,6 +7,7 @@ import Carousel from "../components/Carousel";
 export default function Home() {
     const [currentBanner, setCurrentBanner] = useState(0);
     const [currentDate, setCurrentDate] = useState(new Date());
+    const [currentNews, setCurrentNews] = useState(0);
 
     const banners = [
         {
@@ -78,12 +79,24 @@ export default function Home() {
         },
     ];
 
+    const newsData = [
+        {
+            name: "news 1",
+        },
+        {
+            name: "news 2",
+        },
+        {
+            name: "news 3",
+        },
+    ];
+
     
     useEffect(() => {
 		const interval = setInterval(() => {
             if (currentBanner >= 3) setCurrentBanner(0);
             else setCurrentBanner(currentBanner + 1);
-		}, 100000000);
+		}, 5000);
 
 		return () => {
 			clearInterval(interval);
@@ -105,6 +118,7 @@ export default function Home() {
                         </div>
                     ))}
                 </div>
+
                 <div className="notice-banner">
                     <div className="notice-text">
                         <div className="alert-sub">
@@ -172,6 +186,21 @@ export default function Home() {
                     </button>
                 </div>
             </div>
+
+            {/* 공지사항 */}
+            <div className="news">
+                <div className="news-carousel-wrapper">
+                    <div className="news-carousel">
+                        <div>공지</div>
+                        <div>{newsData[currentNews].name}</div>
+                        <div className="news-arrows">
+                            <div onClick={() => setCurrentNews(currentNews === 0 ? newsData.length - 1 : currentNews - 1)}>^</div>
+                            <div onClick={() => setCurrentNews(currentNews == newsData.length - 1 ? 0 : currentNews + 1)}>v</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Footer */}
             <Footer />
         </div>

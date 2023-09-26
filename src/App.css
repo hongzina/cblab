@@ -42,6 +42,13 @@ button{
   background: #ffffff;
 }
 
+.header-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: row;
+}
+
 .logo-wrapper{
   display: inline-block;
   margin-top: auto;
@@ -61,20 +68,19 @@ button{
 }
 
 .search-input-wrapper{
-  padding: 0 10px; vertical-align: middle;
+  padding: 0 10px; vertical-align: middle; display: flex; flex-direction: row; height: 100%;
 }
 
 .header-buttons-wrapper {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: auto 0 auto auto;
 }
 
 .search-icon{
-  
+  margin-top: auto; margin-bottom: auto;
 }
 
 .search-input{
-  border: none; width: 400px; background: none; padding-left: 20px;
+  border: none; width: 400px; background: none; padding-left: 20px; outline: none; margin-top: auto; margin-bottom: auto;
 }
 
 
@@ -144,9 +150,7 @@ button{
 
 }
 
-.menu-inactive {
-  display: none;
-}
+.menu-inactive { display: none;}
 
 
 
@@ -265,6 +269,7 @@ button{
 
 
 .footer{
+
 }
 
 .footer-first{
@@ -292,11 +297,12 @@ button{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 60px 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .last-l{
-  
+  margin: auto 0 0 0;
 }
 
 .last-r{
@@ -304,9 +310,10 @@ button{
 }
 
 .slick-card {
-  width: 100px;
-  height: 100px;
+  width: 452px;
+  height: 254px;
   background-color: antiquewhite;
+  border-radius: 15px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -321,4 +328,45 @@ button{
   position: absolute;
   left: 0px;
   z-index: 30;
+}
+
+.footer-dropdown-wrapper {
+  position: relative;
+}
+
+.footer-dropdown-active {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  z-index: 30;
+  background-color: #00285c;
+}
+
+.footer-dropdown {
+  position: absolute;
+  height: 0px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.news {
+  background-color: #656565;
+  height: 500px;
+}
+
+.news-carousel-wrapper {
+  background-color: #ebecf0;
+  width: 200px;
+  margin: 0 auto 0 auto;
+}
+
+.news-carousel {
+  display: flex;
+  flex-direction: row;
+}
+
+.news-arrows {
+  display: flex;
+  flex-direction: column;
 }

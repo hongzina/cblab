@@ -2,6 +2,18 @@ import { useState } from "react";
 
 export default function Footer() {
 
+    const dropdownMenus = [
+        {
+            name: "menu 1",
+        },
+        {
+            name: "menu 2",
+        },
+        {
+            name: "menu 3",
+        },
+    ];
+
     return (
         <div className="footer">
             <div className="footer-first">
@@ -11,7 +23,7 @@ export default function Footer() {
                     <div>저작권 정책</div>
                 </div>
                 <div className="first-r">
-                    <div>Family Site</div>
+                    <Dropdown data={dropdownMenus} />
                 </div>
             </div>
             <div className="footer-last">
@@ -32,6 +44,21 @@ export default function Footer() {
                         Copyright ©2011 e-Credible. All rights reserved. 
                     </div>
                 </div>
+            </div>
+        </div>
+    );
+}
+
+function Dropdown({ data }) {
+    const [isActive, setIsActive] = useState(false);
+
+    return (
+        <div className="footer-dropdown-wrapper" onClick={() => setIsActive(!isActive)}>
+            <div>Family Site</div>
+            <div className={`footer-dropdown${isActive ? "-active" : ""}`}>
+                {data.map((item) => (
+                    <div>{item.name}</div>
+                ))}
             </div>
         </div>
     );
