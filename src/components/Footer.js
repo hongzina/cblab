@@ -8,12 +8,15 @@ export default function Footer() {
     const dropdownMenus = [
         {
             name: "이크레더블",
+            link: "https://www.srms.co.kr/svc/ssr/mn/SSR01010100.do",
         },
         {
             name: "뉴스랩",
+            link: "https://newslab.widuspool.com/news/main.do",
         },
         {
             name: "Bigs",
+            link: "https://www.cblab.co.kr/bigs/main.do",
         },
     ];
 
@@ -67,7 +70,7 @@ function Dropdown({ data }) {
             </div>
             <div className={`footer-dropdown${isActive ? "-active" : ""}`}>
                 {data.map((item) => (
-                    <div><a href="javascript:;" target="_blank">{item.name}</a></div>
+                    <div><a href={item.link} target="_blank">{item.name}</a></div>
                 ))}
             </div>
         </div>

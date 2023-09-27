@@ -33,27 +33,27 @@ export default function Home() {
         {
             name: "일괄정보조회",
             image: "",
-            text1: "111",
-            text2: "222",
-            text3: "333",
+            text1: "일괄정보조회입니다.",
+            text2: "일괄정보조회",
+            text3: "일괄정보조회 내용입니다.",
             button_text: "서비스 안내·신청하기",
             button_link: "bbb1",
         },
         {
             name: "법인부동산등기조회",
             image: "",
-            text1: "111",
-            text2: "222",
-            text3: "333",
+            text1: "법인부동산등기조회 입니다.",
+            text2: "법인부동산등기조회",
+            text3: "법인부동산등기조회 내용입니다.",
             button_text: "서비스 안내·신청하기",
             button_link: "bbb1",
         },
         {
             name: "Newslab",
             image: "",
-            text1: "111",
-            text2: "222",
-            text3: "333",
+            text1: "Newslab 입니다.",
+            text2: "Newslab",
+            text3: "Newslab 내용입니다",
             button_text: "서비스 안내·신청하기",
             button_link: "bbb1",
         },
@@ -121,7 +121,7 @@ export default function Home() {
                 <Banner banner={banners[currentBanner]} />
                 <div className="menus">
                     {banners.map((banner, i) => (
-                        <div className="banner-menu-item" key={i} onClick={() => setCurrentBanner(i)}>
+                        <div className={`banner-menu-item${currentBanner === i ? "-active" : ""}`} key={i} onClick={() => setCurrentBanner(i)}>
                             {banner.name}
                         </div>
                     ))}
@@ -242,7 +242,7 @@ export default function Home() {
                         <div className="q-btn btn-notice">
                             <a href="javascript:;">
                                 <div className="inner-text center">
-                                    <CampaignOutlinedIcon className="loud-icon" />
+                                    <CampaignOutlinedIcon className="loud-icon" fontSize="large" />
                                     <div className="q-text">공지사항</div>
                                 </div>
                             </a>
@@ -250,7 +250,7 @@ export default function Home() {
                         <div className="q-btn btn-file">
                             <a href="javascript:;">
                                 <div className="inner-text center">
-                                    <ListAltIcon className="listait-icon" />
+                                    <ListAltIcon className="listait-icon" fontSize="large" />
                                     <div className="q-text"><a href="javascript:;">자료실</a></div>
                                 </div>
                             </a>
@@ -258,7 +258,7 @@ export default function Home() {
                         <div className="q-btn btn-faq">
                             <a href="javascript:;">
                                 <div className="inner-text center">
-                                    <QuestionAnswerOutlinedIcon className="faq-icon" />
+                                    <QuestionAnswerOutlinedIcon className="faq-icon" fontSize="large" />
                                     <div className="q-text"><a href="javascript:;">FAQ</a></div>
                                 </div>
                             </a>
@@ -303,7 +303,7 @@ function Banner({ banner }) {
                         <img className="object" src= {banner.image} />
                     </div>
                     <div className="btn-con btn-a">
-                        <button className="" onClick={() => {}}>
+                        <button className="btn-text" onClick={() => {}}>
                             {banner.button_text}
                         </button>
                     </div>
